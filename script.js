@@ -1,6 +1,6 @@
 const randomizeButton = document.getElementById("randomize-button");
 const randomImage = document.getElementById("random-image");
-const imageDir = "./public";
+const imageDir = "public/";
 let images = ["a"]; // 이미지 파일 이름들을 저장할 배열
 
 // 이미지를 랜덤으로 보여주는 함수
