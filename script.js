@@ -2,14 +2,14 @@ const randomImage = document.getElementById("random-image");
 const imageDir = "./public/";
 
 // 이미지를 랜덤으로 보여주는 함수
-function getRandomImage() {
-  fetchImages().then((images) => {
-    if (images.length > 0) {
-      const randomIndex = Math.floor(Math.random() * images.length);
-      const imageName = images[randomIndex];
-      randomImage.src = imageDir + imageName; // 이미지의 URL을 그대로 설정
-    }
-  });
+async function getRandomImage() {
+  // async 키워드 추가
+  const images = await fetchImages(); // await 키워드 추가
+  if (images.length > 0) {
+    const randomIndex = Math.floor(Math.random() * images.length);
+    const imageName = images[randomIndex];
+    randomImage.src = imageName; // 이미지의 URL을 그대로 설정
+  }
 }
 
 // 이미지 파일들을 불러오는 함수
@@ -29,7 +29,7 @@ async function fetchImages() {
     for (let i = 0; i < fileList.length; i++) {
       const fileName = fileList[i].getAttribute("href");
       if (fileName.endsWith(".png")) {
-        images.push(fileName); // 이미지 파일 이름을 배열에 추가
+        images.push(fileName); // 이미지 파일의 절대 경로를 배열에 추가
       }
     }
 
