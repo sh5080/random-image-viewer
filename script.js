@@ -1,6 +1,6 @@
 const randomImage = document.getElementById("random-image");
-const imageDir = "https://sh5080.github.io/randomImageViewer/public/";
-
+// const imageDir = "https://sh5080.github.io/randomImageViewer/public/";
+const imageDir = "./public";
 // 이미지를 랜덤으로 보여주는 함수
 async function getRandomImage() {
   // async 키워드 추가
