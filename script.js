@@ -8,7 +8,7 @@ function getRandomImage() {
   if (images.length > 0) {
     const randomIndex = Math.floor(Math.random() * images.length);
     const imageName = images[randomIndex];
-    randomImage.src = decodeURIComponent(imageName); // 인코딩된 이름을 디코딩하여 사용
+    randomImage.src = imageName; // 이미지의 URL을 그대로 설정
   }
 }
 
@@ -27,7 +27,8 @@ async function fetchImages() {
     for (let i = 0; i < fileList.length; i++) {
       const fileName = fileList[i].getAttribute("href");
       if (fileName.endsWith(".png")) {
-        images.push(fileName);
+        // images.push(fileName); // 로컬 테스트
+        images.push(imageDir + encodeURIComponent(fileName));
       }
     }
 
