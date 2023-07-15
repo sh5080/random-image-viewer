@@ -8,7 +8,7 @@ function getRandomImage() {
   if (images.length > 0) {
     const randomIndex = Math.floor(Math.random() * images.length);
     const imageName = images[randomIndex];
-    randomImage.src = imageName;
+    randomImage.src = decodeURIComponent(imageName); // 인코딩된 이름을 디코딩하여 사용
   }
 }
 
