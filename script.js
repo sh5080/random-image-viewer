@@ -29,7 +29,7 @@ async function fetchImages() {
     for (let i = 0; i < fileList.length; i++) {
       const fileName = fileList[i].getAttribute("href");
       if (fileName.endsWith(".png")) {
-        images.push(fileName); // 이미지 파일의 절대 경로를 배열에 추가
+        images.push(imageDir + fileName); // 이미지 파일의 절대 경로를 배열에 추가
       }
     }
 
