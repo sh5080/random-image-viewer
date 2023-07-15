@@ -1,6 +1,6 @@
 const randomizeButton = document.getElementById("randomize-button");
 const randomImage = document.getElementById("random-image");
-const imageDir = "public/";
+const imageDir = "./public/";
 let images = []; // 이미지 파일 이름들을 저장할 배열
 
 // 이미지를 랜덤으로 보여주는 함수
@@ -27,8 +27,8 @@ async function fetchImages() {
     for (let i = 0; i < fileList.length; i++) {
       const fileName = fileList[i].getAttribute("href");
       if (fileName.endsWith(".png")) {
-        // images.push(fileName); // 로컬 테스트
-        images.push(imageDir + encodeURIComponent(fileName));
+        images.push(fileName); // 로컬 테스트
+        // images.push(imageDir + encodeURIComponent(fileName));
       }
     }
 
