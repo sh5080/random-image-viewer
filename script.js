@@ -27,7 +27,7 @@ async function fetchImages() {
     for (let i = 0; i < fileList.length; i++) {
       const fileName = fileList[i].getAttribute("href");
       if (fileName.endsWith(".png")) {
-        images.push(imageDir + fileName); // 로컬 테스트
+        images.push(imageDir + fileName + ".png"); // 로컬 테스트
       }
     }
 
