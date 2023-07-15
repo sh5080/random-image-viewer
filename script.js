@@ -1,5 +1,5 @@
 const randomImage = document.getElementById("random-image");
-const imageDir = "./public/";
+const imageDir = "https://sh5080.github.io/randomImageViewer/public/";
 
 // 이미지를 랜덤으로 보여주는 함수
 async function getRandomImage() {
@@ -29,7 +29,7 @@ async function fetchImages() {
     for (let i = 0; i < fileList.length; i++) {
       const fileName = fileList[i].getAttribute("href");
       if (fileName.endsWith(".png")) {
-        images.push(imageDir + fileName); // 이미지 파일의 절대 경로를 배열에 추가
+        images.push(fileName); // 이미지 파일의 절대 경로를 배열에 추가
       }
     }
 
